@@ -1,7 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import 'nfc.js';
+//import 'nfc.js';
 
 function App() {
   return (
