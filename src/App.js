@@ -11,20 +11,15 @@ async function readTag(){
         const decoder = new TextDecoder();
         for (const record of event.message.records) {
           consoleLog("Record type:  " + record.recordType);
-          //document.getElementById("log").innerHTML = "Record type:  " + record.recordType;
           consoleLog("MIME type:    " + record.mediaType);
-          //document.getElementById("log").innerHTML = "MIME type:    " + record.mediaType;
           consoleLog("=== data ===\n" + decoder.decode(record.data));
-          //document.getElementById("log").innerHTML = "=== data ===\n" + decoder.decode(record.data);
         }
       }
     } catch(error) {
       consoleLog(error);
-      //document.getElementById("log").innerHTML = "Error";
     }
   } else {
     consoleLog("Web NFC is not supported.");
-    //document.getElementById("log").innerHTML = "Web NFC is not supported.";
   }
 }
 
@@ -35,14 +30,11 @@ async function writeTag() {
     try {
       await writer.write("What Web Can Do Today");
       consoleLog("NDEF message written!");
-      //document.getElementById("log").innerHTML = "NDEF message written!";
     } catch(error) {
       consoleLog(error);
-      //document.getElementById("log").innerHTML = "Error";
     }
   } else {
     consoleLog("Web NFC is not supported.");
-    //document.getElementById("log").innerHTML = "Web NFC is not supported.";
   }
 }
 
