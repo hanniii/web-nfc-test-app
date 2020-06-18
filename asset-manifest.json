@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/web-nfc-test-app/static/css/main.9af46e00.chunk.css",
+    "main.css": "/web-nfc-test-app/static/css/main.f5b0e44c.chunk.css",
     "main.js": "/web-nfc-test-app/static/js/main.3af32def.chunk.js",
     "main.js.map": "/web-nfc-test-app/static/js/main.3af32def.chunk.js.map",
     "runtime-main.js": "/web-nfc-test-app/static/js/runtime-main.e34dac42.js",
@@ -8,15 +8,15 @@
     "static/js/2.2deae7ae.chunk.js": "/web-nfc-test-app/static/js/2.2deae7ae.chunk.js",
     "static/js/2.2deae7ae.chunk.js.map": "/web-nfc-test-app/static/js/2.2deae7ae.chunk.js.map",
     "index.html": "/web-nfc-test-app/index.html",
-    "precache-manifest.0a2afe0047b0d1b25d9b5da62fd2000b.js": "/web-nfc-test-app/precache-manifest.0a2afe0047b0d1b25d9b5da62fd2000b.js",
+    "precache-manifest.a3dec82f39fa43a92052e9829c8027b3.js": "/web-nfc-test-app/precache-manifest.a3dec82f39fa43a92052e9829c8027b3.js",
     "service-worker.js": "/web-nfc-test-app/service-worker.js",
-    "static/css/main.9af46e00.chunk.css.map": "/web-nfc-test-app/static/css/main.9af46e00.chunk.css.map",
+    "static/css/main.f5b0e44c.chunk.css.map": "/web-nfc-test-app/static/css/main.f5b0e44c.chunk.css.map",
     "static/js/2.2deae7ae.chunk.js.LICENSE.txt": "/web-nfc-test-app/static/js/2.2deae7ae.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e34dac42.js",
     "static/js/2.2deae7ae.chunk.js",
-    "static/css/main.9af46e00.chunk.css",
+    "static/css/main.f5b0e44c.chunk.css",
     "static/js/main.3af32def.chunk.js"
   ]
 }
