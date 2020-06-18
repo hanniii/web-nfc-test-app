@@ -3,6 +3,7 @@ import './App.css';
 
 /*global NDEFReader*/
 async function readTag(){
+  var nfcImg;
   if ("NDEFReader" in window) {
     const reader = new NDEFReader();
     try {
@@ -10,11 +11,12 @@ async function readTag(){
       reader.onreading = event => {
         const decoder = new TextDecoder();
         for (const record of event.message.records) {
-          const nfcImg = record.mediaType;
+          nfcImg += event.message.records[record];
           consoleLog("Record type:  " + record.recordType);
           consoleLog("MIME type:    " + record.mediaType);
           consoleLog("\n" + decoder.decode(record.data));
         }
+        consoleLog("nfcImg: " + nfcImg);
       }
     } catch(error) {
       consoleLog(error);
@@ -48,7 +50,7 @@ function App() {
   return (
     <div className="app text-center">
       <div className="img cen">
-        <img src="{nfcImg}" class="img-fluid rounded" alt=""></img>
+        <p></p>
       </div>
       <div className="divlog">
         <div id="log"></div>
@@ -61,3 +63,4 @@ function App() {
 }
 
 export default App;
+//<img src="{nfcImg}" class="img-fluid rounded" alt=""></img>
