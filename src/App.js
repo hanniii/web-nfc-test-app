@@ -9,9 +9,10 @@ async function readTag(){
       await reader.scan();
       reader.onreading = event => {
         const decoder = new TextDecoder();
+        const nfcImg = record.mediaType;
         for (const record of event.message.records) {
-          //consoleLog("Record type:  " + record.recordType);
-          //consoleLog("MIME type:    " + record.mediaType);
+          consoleLog("Record type:  " + record.recordType);
+          consoleLog("MIME type:    " + record.mediaType);
           consoleLog("\n" + decoder.decode(record.data));
         }
       }
@@ -47,7 +48,7 @@ function App() {
   return (
     <div className="app text-center">
       <div className="img cen">
-        <img src="" class="img-fluid rounded" alt=""></img>
+        <img src="{nfcImg}" class="img-fluid rounded" alt=""></img>
       </div>
       <div className="divlog">
         <div id="log"></div>
