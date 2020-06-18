@@ -12,7 +12,7 @@ async function readTag(){
         const decoder = new TextDecoder();
         for (const record of event.message.records) {
           if(record.recordType == 'url'){
-            nfcImg = URL;
+            nfcImg = "Eine URL";
             consoleLog("nfcImg: " + nfcImg);
           }
           consoleLog("Record type:  " + record.recordType);
