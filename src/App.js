@@ -11,7 +11,9 @@ async function readTag(){
       reader.onreading = event => {
         const decoder = new TextDecoder();
         for (const record of event.message.records) {
-          nfcImg += event.message.records[record];
+          if(record.recordType == "url"){
+            nfcImg = "URL";
+          }
           consoleLog("Record type:  " + record.recordType);
           consoleLog("MIME type:    " + record.mediaType);
           consoleLog("\n" + decoder.decode(record.data));
