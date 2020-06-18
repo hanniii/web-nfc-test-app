@@ -4,25 +4,28 @@ import './App.css';
 
 /*global NDEFReader*/
 async function readTag(){
-  //var link = "https://images.unsplash.com/photo-1592404190290-a12dbfd3843f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80";
-  var nfcImg;
+
   if ("NDEFReader" in window) {
+
     const reader = new NDEFReader();
+
     try {
       await reader.scan();
+
       reader.onreading = event => {
+
         const decoder = new TextDecoder();
+
         for (const record of event.message.records) {
+
           if(record.recordType == 'url' && decoder.decode(record.data).substring(0, 4) == 'http'){
-            nfcImg = decoder.decode(record.data);
-            fillImg(nfcImg)
-            //consoleLog("nfcImg: " + nfcImg);
+            fillImg(decoder.decode(record.data))
           }
-          //consoleLog("Record type:  " + record.recordType);
-          //consoleLog("MIME type:    " + record.mediaType);
-          consoleLog("\n\n" + decoder.decode(record.data));
+          if(decoder.decode(record.data).substring(0, 4) != 'http'){
+            fillText(decoder.decode(record.data)+ "\n")
+          }
+          consoleLog("\n" + decoder.decode(record.data) + "\n" );
         }
-        //consoleLog("nfcImg: " + nfcImg);
       }
     } catch(error) {
       consoleLog(error);
@@ -57,20 +60,38 @@ function fillImg(data) {
   linkImg.src = data;
 };
 
+function fillText(data) {
+  var text = document.getElementById('fillText');
+  text.innerHTML += data + '</br>';
+};
+
 function App() {
   return (
     <div className="app text-center">
-      <div className="img cen">
+      <div className="img">
         <img id="fillImg" src="" class="img-fluid rounded" alt=""></img>
       </div>
+      <h3 className="fillText"></h3>
+      <button type="button" className="btn" onClick={readTag}>Scannen</button>
       <div className="divlog">
         <div id="log"></div>
       </div>
-      <h3>Scann your NFC Tag: </h3>
-      <button type="button" className="btn" onClick={readTag}>Scannen</button>
-      <button type="button" className="btn" onClick={writeTag}>Schreiben</button>
     </div>
   );
 }
 
 export default App;
+/*
+    <div className="app text-center">
+      <div className="img">
+        <img id="fillImg" src="" class="img-fluid rounded" alt=""></img>
+      </div>
+      <h3 className="fillText"></h3>
+      <h3>Scann your NFC Tag: </h3>
+      <button type="button" className="btn" onClick={readTag}>Scannen</button>
+      <button type="button" className="btn" onClick={writeTag}>Schreiben</button>
+      <div className="divlog">
+        <div id="log"></div>
+      </div>
+    </div>
+*/
