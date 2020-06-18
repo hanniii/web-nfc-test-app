@@ -52,8 +52,8 @@ button{
 }
 
 .app .img{
-  width: 300px;
-  height: 450px;
+  width: 280px;
+  height: 380px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 15px;
@@ -65,4 +65,11 @@ button{
 }
 .app .btn{
   background-color: coral;
+  padding: 10px 20px;
+}
+
+.app .divlog{
+  margin-top: 20px;
+  padding: 10px;
+  background-color: peachpuff;
 }

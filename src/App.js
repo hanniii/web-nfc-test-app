@@ -49,7 +49,9 @@ function App() {
       <div className="img cen">
         <img src="" class="img-fluid rounded" alt=""></img>
       </div>
-      <div id="log"></div>
+      <div className="divlog">
+        <div id="log"></div>
+      </div>
       <h3>Scann your NFC Tag: </h3>
       <button type="button" className="btn" onClick={readTag}>Scannen</button>
       <button type="button" className="btn" onClick={writeTag}>Schreiben</button>
