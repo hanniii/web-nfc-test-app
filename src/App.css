@@ -15,14 +15,15 @@ h4{
 /* Bild */
 .app .img{
   margin: 20px 15%;
-  height: 280px;
-  border-radius: 15px;
-  border-color: lightgrey;
-  border-style: solid;
+  padding: 0px;
 }
 .app img{
   width: auto;
+  height: 280px;
   object-fit: cover;
+  border-radius: 15px;
+  border-color: lightgrey;
+  border-style: solid;
 }
 
 /* Button */
@@ -46,6 +47,7 @@ h4{
 
 /* Log Box */
 .app .divlog{
-  padding: 30px;
+  padding: 30px 10px;
   background-color: peachpuff;
+  word-wrap: break-word;
 }
