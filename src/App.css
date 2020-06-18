@@ -43,7 +43,7 @@ button{
 }
 
 .navbar{
-  background-color: yellow;
+  background-color: coral;
   color: white;
 }
 
@@ -52,8 +52,8 @@ button{
 }
 
 .app .img{
-  width: 250px;
-  height: 350px;
+  width: 350px;
+  height: 250px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 15px;

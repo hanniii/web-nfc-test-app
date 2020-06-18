@@ -11,12 +11,12 @@ async function readTag(){
       reader.onreading = event => {
         const decoder = new TextDecoder();
         for (const record of event.message.records) {
-          if(record.recordType == 'url' && decoder.decode(record.data).substring(0, 4) == 'file'){
-            nfcImg = decoder.decode(record.data).substring(7,);
+          if(record.recordType == 'url' && decoder.decode(record.data).substring(0, 4) == 'http'){
+            nfcImg = decoder.decode(record.data);
             //consoleLog("nfcImg: " + nfcImg);
           }
-          consoleLog("Record type:  " + record.recordType);
-          consoleLog("MIME type:    " + record.mediaType);
+          //consoleLog("Record type:  " + record.recordType);
+          //consoleLog("MIME type:    " + record.mediaType);
           consoleLog("\n\n" + decoder.decode(record.data));
         }
         //consoleLog("nfcImg: " + nfcImg);
@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="app text-center">
       <div className="img cen">
-        <img src="" class="img-fluid rounded" alt=""></img>
+        <img src="{nfcImg:text}" class="img-fluid rounded" alt=""></img>
       </div>
       <div className="divlog">
         <div id="log"></div>
