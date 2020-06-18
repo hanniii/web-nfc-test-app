@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-
 /*global NDEFReader*/
 async function readTag(){
 
@@ -64,29 +63,17 @@ function fillImg(data) {
 function App() {
   return (
     <div className="app text-center">
+      <h4>Scann your NFC-Tag</h4>
       <div className="img">
         <img id="fillImg" src="" class="img-fluid rounded" alt=""></img>
       </div>
-      <button type="button" className="btn" onClick={readTag}>Scannen</button>
+      <p>Logs:</p>
       <div className="divlog">
         <div id="log"></div>
       </div>
+      <button type="button" className="btn" onClick={readTag}><span className="iconify" data-icon="ic-baseline-nfc" data-inline="false"></span></button>
     </div>
   );
 }
 
 export default App;
-/*
-    <div className="app text-center">
-      <div className="img">
-        <img id="fillImg" src="" class="img-fluid rounded" alt=""></img>
-      </div>
-      <h3 className="fillText"></h3>
-      <h3>Scann your NFC Tag: </h3>
-      <button type="button" className="btn" onClick={readTag}>Scannen</button>
-      <button type="button" className="btn" onClick={writeTag}>Schreiben</button>
-      <div className="divlog">
-        <div id="log"></div>
-      </div>
-    </div>
-*/
