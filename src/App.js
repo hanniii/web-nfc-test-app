@@ -19,10 +19,10 @@ async function readTag(){
         for (const record of event.message.records) {
 
           if(record.recordType == 'url' && decoder.decode(record.data).substring(0, 4) == 'http'){
-            fillImg(decoder.decode(record.data))
+            fillImg(decoder.decode(record.data));
           }
           if(decoder.decode(record.data).substring(0, 4) != 'http'){
-            fillText(decoder.decode(record.data)+ "\n")
+            fillText(decoder.decode(record.data));
           }
           consoleLog("\n" + decoder.decode(record.data) + "\n" );
         }
