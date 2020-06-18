@@ -54,7 +54,7 @@ function consoleLog(data) {
 
 function fillImg(data) {
   var linkImg = document.getElementById('fillImg');
-  linkImg.innerHTML += data;
+  linkImg.src = data;
 };
 
 function App() {
