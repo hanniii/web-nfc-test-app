@@ -11,12 +11,12 @@ async function readTag(){
       reader.onreading = event => {
         const decoder = new TextDecoder();
         for (const record of event.message.records) {
-          if(record.recordType == 'url'){
-            nfcImg = "Eine URL";
+          if(record.recordType == 'url' && decoder.decode(record.data).substring(0, 4) == 'file'){
+            nfcImg = decoder.decode(record.data).substring(7,);
             consoleLog("nfcImg: " + nfcImg);
           }
-          consoleLog("Record type:  " + record.recordType);
-          consoleLog("MIME type:    " + record.mediaType);
+          //consoleLog("Record type:  " + record.recordType);
+          //consoleLog("MIME type:    " + record.mediaType);
           consoleLog("\n" + decoder.decode(record.data));
         }
         //consoleLog("nfcImg: " + nfcImg);
