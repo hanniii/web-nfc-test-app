@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 
+
 /*global NDEFReader*/
 async function readTag(){
+  //var link = "https://images.unsplash.com/photo-1592404190290-a12dbfd3843f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80";
   var nfcImg;
   if ("NDEFReader" in window) {
     const reader = new NDEFReader();
@@ -13,6 +15,7 @@ async function readTag(){
         for (const record of event.message.records) {
           if(record.recordType == 'url' && decoder.decode(record.data).substring(0, 4) == 'http'){
             nfcImg = decoder.decode(record.data);
+            fillImg(nfcImg)
             //consoleLog("nfcImg: " + nfcImg);
           }
           //consoleLog("Record type:  " + record.recordType);
@@ -49,11 +52,16 @@ function consoleLog(data) {
   logElement.innerHTML += data + '\n' + '</br>';
 };
 
+function fillImg(data) {
+  var linkImg = document.getElementById('fillImg');
+  linkImg.innerHTML += data;
+};
+
 function App() {
   return (
     <div className="app text-center">
       <div className="img cen">
-        <img src="{nfcImg:text}" class="img-fluid rounded" alt=""></img>
+        <p id="fillImg"></p>
       </div>
       <div className="divlog">
         <div id="log"></div>

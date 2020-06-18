@@ -43,7 +43,7 @@ button{
 }
 
 .navbar{
-  background-color: coral;
+  background-color: cadetblue;
   color: white;
 }
 
@@ -51,17 +51,17 @@ button{
   color: white;
 }
 
-.app .img{
-  width: 350px;
-  height: 250px;
-  margin-left: auto;
-  margin-right: auto;
+
+.app img{
+  width: auto;
+  height: 300px;
+  object-fit: cover;
+  background-color: cornsilk;
   border-radius: 15px;
   border-color: lightgrey;
   border-style: solid;
   color:lightgrey;
-  text-align: center;
-  vertical-align: middle;
+
 }
 .app .btn{
   background-color: coral;
@@ -72,4 +72,11 @@ button{
   margin-top: 20px;
   padding: 10px;
   background-color: peachpuff;
+}
+
+#fillImg{
+  color: black;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
 }
