@@ -61,7 +61,7 @@ function App() {
   return (
     <div className="app text-center">
       <div className="img cen">
-        <p id="fillImg"></p>
+        <img id="fillImg" src="" class="img-fluid rounded" alt=""></img>
       </div>
       <div className="divlog">
         <div id="log"></div>
@@ -74,4 +74,3 @@ function App() {
 }
 
 export default App;
-//<img src="{nfcImg}" class="img-fluid rounded" alt=""></img>
