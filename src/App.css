@@ -8,24 +8,20 @@
   color: white;
 }
 
-.app{
-  padding: 0px 50px;
-}
 h4{
   color: coral;
 }
 
 /* Bild */
 .app .img{
-  margin: 20px 0px;
-  height: 300px;
+  margin: 20px 15%;
+  height: 280px;
   border-radius: 15px;
   border-color: lightgrey;
   border-style: solid;
 }
 .app img{
   width: auto;
-  height: 300px;
   object-fit: cover;
 }
 
