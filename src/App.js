@@ -22,9 +22,9 @@ async function readTag(){
             fillImg(decoder.decode(record.data));
           }
           if(decoder.decode(record.data).substring(0, 4) != 'http'){
-            fillText(decoder.decode(record.data));
+            consoleLog("\n" + decoder.decode(record.data) + "\n" );
           }
-          consoleLog("\n" + decoder.decode(record.data) + "\n" );
+          //consoleLog("\n" + decoder.decode(record.data) + "\n" );
         }
       }
     } catch(error) {
@@ -60,10 +60,6 @@ function fillImg(data) {
   linkImg.src = data;
 };
 
-function fillText(data) {
-  var text = document.getElementById('fillText');
-  text.innerHTML += data + '</br>';
-};
 
 function App() {
   return (
@@ -71,7 +67,6 @@ function App() {
       <div className="img">
         <img id="fillImg" src="" class="img-fluid rounded" alt=""></img>
       </div>
-      <h3 className="fillText"></h3>
       <button type="button" className="btn" onClick={readTag}>Scannen</button>
       <div className="divlog">
         <div id="log"></div>
