@@ -9,8 +9,8 @@ async function readTag(){
       await reader.scan();
       reader.onreading = event => {
         const decoder = new TextDecoder();
-        const nfcImg = record.mediaType;
         for (const record of event.message.records) {
+          const nfcImg = record.mediaType;
           consoleLog("Record type:  " + record.recordType);
           consoleLog("MIME type:    " + record.mediaType);
           consoleLog("\n" + decoder.decode(record.data));
