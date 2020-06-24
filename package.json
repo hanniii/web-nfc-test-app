@@ -1,6 +1,6 @@
 {
-  "homepage": "http://hanniii.github.io/web-nfc-test-app",
-  "name": "web-nfc-test-app",
+  "homepage": "http://hanniii.github.io/web-nfc-image-app",
+  "name": "web-nfc-image-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
